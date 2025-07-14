@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
     <AnimatedSection id="home" className="min-h-screen flex items-center justify-center !pt-0 !pb-0">
       <div className="text-center">
         <img
-          src="/assets/profile.jpg"
+          src="/profile.jpg"
           alt="Dendi Ardimansah"
           className="w-36 h-36 md:w-48 md:h-48 rounded-full mx-auto mb-6 border-4 border-primary/50 shadow-lg object-cover"
         />

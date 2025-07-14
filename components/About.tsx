@@ -6,7 +6,7 @@ const About: React.FC = () => {
     <AnimatedSection id="about" className="bg-gray-50 dark:bg-dark-bg/50">
       <div className="grid md:grid-cols-5 gap-10 items-center">
         <div className="md:col-span-2">
-          <img src="/assets/about-dendi.jpg" alt="Dendi Ardimansah at work" className="rounded-2xl shadow-2xl w-full" />
+          <img src="/about-dendi.jpg" alt="Dendi Ardimansah at work" className="rounded-2xl shadow-2xl w-full" />
         </div>
         <div className="md:col-span-3">
           <h2 className="text-4xl font-bold text-light-text dark:text-white mb-4">About Me</h2>
