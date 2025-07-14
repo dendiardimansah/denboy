@@ -45,10 +45,10 @@ export const PROJECTS: Project[] = [
 export const POSTS: Post[] = [
   {
     id: 1,
-    title: 'The Future of Sustainable Tech',
-    excerpt: 'Exploring how green technology can help us build a more sustainable future without compromising on innovation.',
-    imageUrl: '/journal-sustainable-tech.jpg',
-    fullContent: 'Green technology, or cleantech, is the application of environmental science to conserve the natural environment and resources, and to curb the negative impacts of human involvement. In recent years, the focus has shifted from merely reducing harm to actively creating positive environmental outcomes. This includes innovations in renewable energy like solar and wind power, but also extends to software and IoT. For example, smart grids can optimize energy distribution, reducing waste significantly. AI algorithms can predict environmental changes, helping us to prepare and mitigate disasters. The journey is long, but every step towards integrating sustainability into our technological DNA is a step towards a healthier planet.'
+    title: 'Membangun Jaringan Internet di Desa Pangrumasan Saat Pandemi',
+    excerpt: 'perjalanan saya membuat jaringan dari sebuah teflon katel, antena grid, dan tekad untuk tidak menyerah. Dari desa kecil yang dulu gelap sinyal, kini kami mulai menapaki jalan digital, sambil tetap menjaga akar budaya dan kebersamaan.Teknologi bukan hanya milik kota. Dengan niat dan gotong royong, desa pun bisa terkoneksi dengan dunia.',
+    imageUrl: '/jaringanSaya.jpg',
+    fullContent: 'Pada awal pandemi COVID-19 tahun 2020, ketika seluruh dunia dipaksa beradaptasi dengan sistem daring, Desa Pangrumasan masih bergelut dengan satu masalah besar: tidak ada sinyal, apalagi internet.Sebagai seseorang yang menaruh minat besar pada jaringan dan teknologi, saya tidak tinggal diam. Perjuangan dimulai dari cara paling sederhana: mengikat HP ke antena grid yang dipasang di ujung bambu panjang, mencari celah sinyal di antara ladang dan kebun.Kami juga mencoba berbagai alternatif, termasuk menggunakan modem Orbit Telkomsel dengan dukungan antena eksternal. Kadang sinyal muncul, kadang hilang — tapi semangat untuk terkoneksi tidak pernah padam.Hingga akhirnya, solusi nyata datang: Starlink, layanan internet satelit dari SpaceX. Meski awalnya asing, saya beranikan diri memasangnya di desa. Dengan bantuan warga, menara sederhana, dan konfigurasi jaringan lokal, kami berhasil menyalurkan Wi-Fi ke beberapa titik penting.Dampak Nyata:Guru-guru bisa kembali mengajar secara daring.Siswa bisa mengikuti kelas online tanpa harus berjalan jauh mencari sinyal.Bidan desa dapat menerima laporan kesehatan via video call.Warga mulai mengenal marketplace, konten digital, dan peluang baru'
   },
   {
     id: 2,
@@ -59,9 +59,9 @@ export const POSTS: Post[] = [
   },
   {
     id: 3,
-    title: 'Designing for Low-Energy Web',
-    excerpt: 'Practical tips and principles for creating websites that are not only fast but also environmentally friendly.',
-    imageUrl: '/journal-low-energy-web.jpg',
-    fullContent: 'Every byte of data transferred over the internet consumes energy. As web developers, we can make conscious choices to reduce the digital carbon footprint of our creations. The first step is optimizing assets: compress images, use modern formats like WebP, and lazy-load offscreen content. Secondly, minimize code. Use efficient, tree-shakeable libraries and avoid bloated frameworks for simple tasks. Thirdly, consider static site generation. Serving pre-built HTML files is significantly less server-intensive than running a complex backend for every page view. Finally, embrace dark mode. On OLED screens, dark pixels are turned off, which can lead to tangible energy savings. By adopting these principles, we can build a faster, more accessible, and greener web for everyone.'
+    title: 'Curug Batu Nyusun',
+    excerpt: 'urug Batu Nyusun di Desa Pangrumasan, Garut, menyuguhkan keindahan air terjun alami dengan susunan batu unik dan suasana yang masih asri. Surga tersembunyi ini cocok untuk wisata alam dan refleksi diri, sekaligus menyimpan nilai budaya lokal.',
+    imageUrl: '/batunyusun.jpg',
+    fullContent: 'Curug Batu Nyusun terletak di Desa Pangrumasan, Kabupaten Garut. Air terjun ini memiliki formasi unik batu-batu besar yang tersusun alami, menciptakan pemandangan yang memesona.Suasana sekitar masih sangat asri, dikelilingi pepohonan dan suara alam yang menenangkan. Curug ini belum banyak dikenal, menjadikannya cocok untuk wisata alam dan refleksi diri.Selain keindahan alamnya, curug ini juga menyimpan cerita rakyat dan nilai budaya lokal. Potensi sebagai destinasi ekowisata sangat besar, asalkan dijaga bersama oleh masyarakat.'
   },
 ];
