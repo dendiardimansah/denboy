@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
         <p className="text-xl md:text-2xl font-light text-primary dark:text-primary-dark mb-8">
           Connecting Nature and Technology
         </p>
-        <div className="space-x-4">
+        <div className="flex flex-wrap justify-center gap-4">
           <a
             href="#projects"
             className="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -30,6 +30,7 @@ const Hero: React.FC = () => {
             Get In Touch
           </a>
         </div>
+
       </div>
     </AnimatedSection>
   );
