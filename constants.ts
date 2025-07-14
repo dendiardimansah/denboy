@@ -47,7 +47,7 @@ export const POSTS: Post[] = [
     id: 1,
     title: 'Membangun Jaringan Internet di Desa Pangrumasan Saat Pandemi',
     excerpt: 'perjalanan saya membuat jaringan dari sebuah teflon katel, antena grid, dan tekad untuk tidak menyerah. Dari desa kecil yang dulu gelap sinyal, kini kami mulai menapaki jalan digital, sambil tetap menjaga akar budaya dan kebersamaan.Teknologi bukan hanya milik kota. Dengan niat dan gotong royong, desa pun bisa terkoneksi dengan dunia.',
-    imageUrl: '/jaringanSaya.jpg',
+    imageUrl: '/jaringansaya.jpg',
     fullContent: 'Pada awal pandemi COVID-19 tahun 2020, ketika seluruh dunia dipaksa beradaptasi dengan sistem daring, Desa Pangrumasan masih bergelut dengan satu masalah besar: tidak ada sinyal, apalagi internet.Sebagai seseorang yang menaruh minat besar pada jaringan dan teknologi, saya tidak tinggal diam. Perjuangan dimulai dari cara paling sederhana: mengikat HP ke antena grid yang dipasang di ujung bambu panjang, mencari celah sinyal di antara ladang dan kebun.Kami juga mencoba berbagai alternatif, termasuk menggunakan modem Orbit Telkomsel dengan dukungan antena eksternal. Kadang sinyal muncul, kadang hilang — tapi semangat untuk terkoneksi tidak pernah padam.Hingga akhirnya, solusi nyata datang: Starlink, layanan internet satelit dari SpaceX. Meski awalnya asing, saya beranikan diri memasangnya di desa. Dengan bantuan warga, menara sederhana, dan konfigurasi jaringan lokal, kami berhasil menyalurkan Wi-Fi ke beberapa titik penting.Dampak Nyata:Guru-guru bisa kembali mengajar secara daring.Siswa bisa mengikuti kelas online tanpa harus berjalan jauh mencari sinyal.Bidan desa dapat menerima laporan kesehatan via video call.Warga mulai mengenal marketplace, konten digital, dan peluang baru'
   },
   {
