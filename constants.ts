@@ -52,10 +52,10 @@ export const POSTS: Post[] = [
   },
   {
     id: 2,
-    title: 'My Journey into IoT Development',
-    excerpt: 'A personal story about the challenges and triumphs of creating my first connected device from scratch.',
+    title: 'Pengalaman Membangun IoT Smart Garden',
+    excerpt: 'Sebuah cerita pribadi tentang tantangan pembuatan iot smart garden',
     imageUrl: '/journal-iot-journey.jpg',
-    fullContent: 'My first foray into the Internet of Things was a humble, yet ambitious project: a plant that could "ask" for water. It started with a simple Arduino, a soil moisture sensor, and a lot of tangled wires. The first challenge was simply getting a reliable reading from the sensor. After days of debugging and calibrating, I finally got it to work. Then came the "internet" part. Connecting the device to my Wi-Fi and sending that data to a server was another mountain to climb. I wrestled with HTTP requests, JSON formatting, and setting up a basic backend. The moment I received the first "I\'m thirsty!" notification on my phone was pure magic. It was a powerful reminder that with persistence, you can bring an idea, no matter how small, to life and connect it to the world.'
+    fullContent: 'Proyek Smart Garden System ini saya kerjakan saat menyusun skripsi, sebagai solusi otomatisasi penyiraman tanaman berbasis IoT. Dengan memanfaatkan ESP32, sensor suhu, kelembapan, dan kelembapan tanah, sistem ini dapat memantau kondisi lingkungan dan mengaktifkan pompa air secara otomatis.Selain itu, saya juga membuat antarmuka HTML responsif agar pengguna bisa melihat data sensor dan mengontrol pompa secara manual. Proyek ini menjadi wujud ketertarikan saya pada pengembangan teknologi ramah lingkungan yang praktis dan efisien.'
   },
   {
     id: 3,
