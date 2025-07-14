@@ -17,8 +17,8 @@ export const PROJECTS: Project[] = [
     detailImageUrl: '/project-smart-garden.jpg',
     longDescription: 'The Smart Garden System is a comprehensive IoT solution designed for modern home gardeners. It utilizes sensors to monitor soil moisture, humidity, and ambient temperature in real-time. Based on this data, an automated irrigation system provides the perfect amount of water, preventing over or under-watering. A companion mobile app allows users to view historical data, set custom watering schedules, and receive alerts, ensuring their plants thrive with minimal effort.',
     techStack: ['ESP32', 'React Native', 'Firebase', 'PlatformIO', 'Node.js'],
-    liveUrl: '#',
-    sourceUrl: '#',
+    liveUrl: '/smart-garden.html',
+    sourceUrl: 'https://github.com/dendiardimansah',
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const PROJECTS: Project[] = [
     detailImageUrl: '/project-pet-feeder.jpg',
     longDescription: 'This Automated Pet Feeder ensures that your beloved pets are fed on time, every time, even when you\'re not home. The device can be programmed to dispense specific portions of food at scheduled intervals through a user-friendly mobile application. It also includes a built-in webcam, allowing pet owners to check in on their furry friends during meal times. The system sends notifications upon successful feeding, providing peace of mind.',
     techStack: ['Raspberry Pi', 'Python (Flask)', 'React', 'MongoDB', 'AWS S3'],
-    sourceUrl: '#',
+    sourceUrl: 'Automated-Pet-Feeder.html',
   },
   {
     id: 3,

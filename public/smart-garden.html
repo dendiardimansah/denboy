@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Garden</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #d1eecb, #f4fff3);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #2c3e50;
+      transition: 0.3s;
+    }
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      padding: 30px 40px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+    h1 { margin-bottom: 10px; color: #27ae60; }
+    .sensor-cards {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 10px 0;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      min-width: 100px;
+    }
+    .card h3 { margin: 0; color: #27ae60; }
+    .bar-container {
+      width: 100%;
+      background-color: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 10px 0;
+    }
+    .bar {
+      height: 25px;
+      background-color: #27ae60;
+      color: white;
+      text-align: center;
+      line-height: 25px;
+      transition: width 0.5s;
+    }
+    button {
+      background: #27ae60;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 8px 5px;
+      transition: 0.3s;
+    }
+    button:hover { background: #2ecc71; }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+    .switch input { display: none; }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px; width: 26px;
+      left: 4px; bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider { background-color: #27ae60; }
+    input:checked + .slider:before { transform: translateX(26px); }
+    body.dark { background: #222; color: #f0f0f0; }
+    body.dark .container { background: #333; color: #fff; }
+    body.dark .bar { background-color: #6ab04c; }
+    body.dark .card { background: #444; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌿 Smart Garden</h1>
+
+    <div class="sensor-cards">
+      <div class="card"><h3>🌡️ Suhu</h3><p id="temp">-- °C</p></div>
+      <div class="card"><h3>💧 Udara</h3><p id="hum">-- %</p></div>
+      <div class="card"><h3>🌱 Tanah</h3><p id="soilVal">--</p></div>
+    </div>
+
+    <div>
+      <p>🌱 Kelembapan Tanah:</p>
+      <div class="bar-container">
+        <div class="bar" id="soilBar" style="width: 0%">0%</div>
+      </div>
+    </div>
+
+    <div>
+      <button onclick="fetch('/pump/on')">Nyalakan Pompa</button>
+      <button onclick="fetch('/pump/off')">Matikan Pompa</button>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <label class="switch">
+        <input type="checkbox" id="modeToggle" onchange="toggleMode(this)">
+        <span class="slider round"></span>
+      </label>
+      <p id="modeLabel">Mode: Manual</p>
+    </div>
+
+    <p id="clock">🕒 00:00:00</p>
+    <button onclick="toggleTheme()">🌓 Ganti Tema</button>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+    function toggleMode(el) {
+      const mode = el.checked ? "auto" : "manual";
+      fetch("/mode/" + mode);
+      document.getElementById("modeLabel").innerText = "Mode: " + (mode === "auto" ? "Otomatis" : "Manual");
+    }
+    setInterval(() => {
+      const now = new Date();
+      document.getElementById("clock").innerText = "🕒 " + now.toLocaleTimeString();
+    }, 1000);
+    async function updateSensor() {
+      const res = await fetch('/data');
+      const data = await res.json();
+      let soil = parseInt(data.soil);
+      let soilPercent = Math.min(Math.max(Math.floor((soil / 4095) * 100), 0), 100);
+      document.getElementById("temp").innerText = data.temp + " °C";
+      document.getElementById("hum").innerText = data.hum + " %";
+      document.getElementById("soilVal").innerText = data.soil;
+      document.getElementById("soilBar").style.width = soilPercent + "%";
+      document.getElementById("soilBar").innerText = soilPercent + "%";
+    }
+    setInterval(updateSensor, 3000);
+    updateSensor();
+  </script>
+</body>
+</html>

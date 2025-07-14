@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Pet Feeder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #4CAF50; /* Hijau */
+            --primary-dark: #388E3C;
+            --secondary-color: #FFC107; /* Kuning */
+            --background-light: #F9F9F9;
+            --text-color: #333;
+            --light-grey: #EEE;
+            --border-color: #DDD;
+            --card-bg: #FFF;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --border-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-light);
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #FFF;
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo .fas {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav ul li {
+            margin-left: 30px;
+        }
+
+        .nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #FFF;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background-color: var(--light-grey);
+            color: var(--text-color);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: #FFF;
+            border-color: var(--primary-color);
+        }
+
+        .btn-secondary.active {
+            background-color: var(--primary-color);
+            color: #FFF;
+            border-color: var(--primary-color);
+        }
+
+        .btn-icon {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .btn-icon:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-icon.delete {
+            color: #FF4444;
+        }
+
+        .btn-icon.delete:hover {
+            color: #CC0000;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .mt-1 {
+            margin-top: 15px;
+        }
+
+        /* Sections */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .bg-light {
+            background-color: var(--background-light);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h2 .fas {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(to right, #e0f2f1, #e8f5e9);
+            padding: 100px 0;
+        }
+
+        .hero-section .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            text-align: center; /* Default for mobile */
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+        }
+
+        .hero-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--text-color);
+            text-align: left; /* Specific for desktop */
+            justify-content: flex-start; /* Specific for desktop */
+        }
+
+        .hero-content h2 .fas {
+            display: none; /* Hide icon in hero h2 */
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+            text-align: left; /* Specific for desktop */
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Status & Control Grids */
+        .status-grid,
+        .control-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .status-card,
+        .control-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Untuk konten yang sama tingginya */
+        }
+
+        .status-card h3,
+        .control-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .status-card p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .status-indicator {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .status-indicator .fas {
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+
+        .status-indicator.online {
+            color: var(--primary-color);
+        }
+
+        .status-indicator.offline {
+            color: #FF4444;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            background-color: var(--light-grey);
+            border-radius: 20px;
+            height: 30px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            color: #FFF;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding-right: 10px;
+            border-radius: 20px;
+            transition: width 0.5s ease;
+        }
+
+        /* Schedule List */
+        .schedule-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        .schedule-item {
+            background-color: var(--card-bg);
+            padding: 20px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .schedule-item p {
+            font-size: 1.1rem;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .schedule-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .add-schedule-btn {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .add-schedule-btn .fas {
+            margin-right: 8px;
+        }
+
+        /* Control Section */
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group input[type="number"] {
+            width: 120px;
+            padding: 10px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            text-align: center;
+            -moz-appearance: textfield; /* Hide arrows in Firefox */
+        }
+
+        .input-group input::-webkit-outer-spin-button,
+        .input-group input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .input-group span {
+            margin-left: 10px;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* History List */
+        .history-list {
+            list-style: none;
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 20px 30px;
+        }
+
+        .history-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--light-grey);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .history-list li:last-child {
+            border-bottom: none;
+        }
+
+        .history-time {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--text-color);
+            color: #FFF;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav ul li {
+                margin: 0 10px;
+                margin-bottom: 10px;
+            }
+
+            .hero-section .container {
+                flex-direction: column-reverse; /* Image on top for mobile */
+                gap: 30px;
+                text-align: center;
+            }
+
+            .hero-content h2,
+            .hero-content p {
+                text-align: center;
+                justify-content: center;
+            }
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .section-padding {
+                padding: 50px 0;
+            }
+
+            .status-grid,
+            .control-grid {
+                grid-template-columns: 1fr; /* Single column on mobile */
+            }
+
+            .status-card,
+            .control-card {
+                padding: 25px;
+            }
+
+            .schedule-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .schedule-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+
+            .history-list li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .nav ul li {
+                margin: 0 5px;
+                margin-bottom: 8px;
+            }
+
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .status-card h3,
+            .control-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .status-card p {
+                font-size: 1rem;
+            }
+
+            .progress-fill span {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><i class="fas fa-paw"></i> Smart Pet Feeder</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#status">Status</a></li>
+                    <li><a href="#jadwal">Jadwal</a></li>
+                    <li><a href="#kontrol">Kontrol</a></li>
+                    <li><a href="#riwayat">Riwayat</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Berikan yang Terbaik untuk Hewan Peliharaan Anda</h2>
+                    <p>Atur jadwal makan, pantau tingkat makanan, dan berikan porsi tepat kapan saja, di mana saja.</p>
+                    <a href="#kontrol" class="btn-primary">Mulai Sekarang</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://via.placeholder.com/400x300/e0e0e0/ffffff?text=Pet+Feeder+Device" alt="Smart Pet Feeder Device">
+                </div>
+            </div>
+        </section>
+
+        <section id="status" class="status-section section-padding">
+            <div class="container">
+                <h2><i class="fas fa-info-circle"></i> Status Feeder</h2>
+                <div class="status-grid">
+                    <div class="status-card">
+                        <h3>Tingkat Makanan</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%;"><span>75%</span></div>
+                        </div>
+                        <p>Makanan cukup untuk 2 hari lagi.</p>
+                    </div>
+                    <div class="status-card">
+                        <h3>Status Perangkat</h3>
+                        <p class="status-indicator online"><i class="fas fa-circle"></i> Online</p>
+                        <p>Terakhir diperbarui: 13 Juli 2025, 23:00 WIB</p>
+                    </div>
+                    <div class="status-card">
+                        <h3>Porsi Terakhir</h3>
+                        <p>50 gram - 13 Juli 2025, 20:00 WIB</p>
+                        <button class="btn-secondary">Berikan Sekarang (50g)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="jadwal" class="schedule-section section-padding bg-light">
+            <div class="container">
+                <h2><i class="fas fa-clock"></i> Jadwal Makan</h2>
+                <div class="schedule-list">
+                    <div class="schedule-item">
+                        <p><strong>07:00 AM</strong> - 75 gram (Setiap Hari)</p>
+                        <div class="schedule-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon delete"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <p><strong>12:00 PM</strong> - 50 gram (Senin, Rabu, Jumat)</p>
+                        <div class="schedule-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon delete"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <p><strong>18:00 PM</strong> - 75 gram (Setiap Hari)</p>
+                        <div class="schedule-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon delete"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-primary add-schedule-btn"><i class="fas fa-plus"></i> Tambah Jadwal</button>
+            </div>
+        </section>
+
+        <section id="kontrol" class="control-section section-padding">
+            <div class="container">
+                <h2><i class="fas fa-cogs"></i> Kontrol Manual</h2>
+                <div class="control-grid">
+                    <div class="control-card">
+                        <h3>Porsi Cepat</h3>
+                        <div class="btn-group">
+                            <button class="btn-secondary">25g</button>
+                            <button class="btn-secondary active">50g</button>
+                            <button class="btn-secondary">75g</button>
+                            <button class="btn-secondary">100g</button>
+                        </div>
+                        <button class="btn-primary mt-1">Berikan Sekarang</button>
+                    </div>
+                    <div class="control-card">
+                        <h3>Porsi Kustom</h3>
+                        <div class="input-group">
+                            <input type="number" id="custom-grams" min="10" max="200" value="60">
+                            <span>gram</span>
+                        </div>
+                        <button class="btn-primary mt-1">Berikan Porsi Kustom</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="riwayat" class="history-section section-padding bg-light">
+            <div class="container">
+                <h2><i class="fas fa-history"></i> Riwayat Pemberian Makan</h2>
+                <ul class="history-list">
+                    <li><span class="history-time">13 Juli 2025, 20:00 WIB</span> - 50 gram (Terjadwal)</li>
+                    <li><span class="history-time">13 Juli 2025, 15:30 WIB</span> - 25 gram (Manual)</li>
+                    <li><span class="history-time">13 Juli 2025, 12:00 WIB</span> - 50 gram (Terjadwal)</li>
+                    <li><span class="history-time">13 Juli 2025, 07:00 WIB</span> - 75 gram (Terjadwal)</li>
+                    <li><span class="history-time">12 Juli 2025, 20:00 WIB</span> - 50 gram (Terjadwal)</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Smart Pet Feeder. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
