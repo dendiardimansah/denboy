@@ -45,23 +45,25 @@ export const PROJECTS: Project[] = [
 export const POSTS: Post[] = [
   {
     id: 1,
-    title: 'Membangun Jaringan Internet di Desa Pangrumasan Saat Pandemi',
-    excerpt: 'perjalanan saya membuat jaringan dari sebuah teflon katel, antena grid, dan tekad untuk tidak menyerah. Dari desa kecil yang dulu gelap sinyal, kini kami mulai menapaki jalan digital, sambil tetap menjaga akar budaya dan kebersamaan.Teknologi bukan hanya milik kota. Dengan niat dan gotong royong, desa pun bisa terkoneksi dengan dunia.',
+    title: 'Building an Internet Network in Pangrumasan Village During the Pandemic',
+    excerpt: "My journey began with a kettle lid, a grid antenna, and sheer determination. From a small village once left in the dark with no signal, we began paving our way into the digital world—while still holding tight to our cultural roots and community spirit. Technology is not just for cities. With strong will and collaboration, even remote villages can connect to the world.",
     imageUrl: '/jaringansaya.jpg',
-    fullContent: 'Pada awal pandemi COVID-19 tahun 2020, ketika seluruh dunia dipaksa beradaptasi dengan sistem daring, Desa Pangrumasan masih bergelut dengan satu masalah besar: tidak ada sinyal, apalagi internet.Sebagai seseorang yang menaruh minat besar pada jaringan dan teknologi, saya tidak tinggal diam. Perjuangan dimulai dari cara paling sederhana: mengikat HP ke antena grid yang dipasang di ujung bambu panjang, mencari celah sinyal di antara ladang dan kebun.Kami juga mencoba berbagai alternatif, termasuk menggunakan modem Orbit Telkomsel dengan dukungan antena eksternal. Kadang sinyal muncul, kadang hilang — tapi semangat untuk terkoneksi tidak pernah padam.Hingga akhirnya, solusi nyata datang: Starlink, layanan internet satelit dari SpaceX. Meski awalnya asing, saya beranikan diri memasangnya di desa. Dengan bantuan warga, menara sederhana, dan konfigurasi jaringan lokal, kami berhasil menyalurkan Wi-Fi ke beberapa titik penting.Dampak Nyata:Guru-guru bisa kembali mengajar secara daring.Siswa bisa mengikuti kelas online tanpa harus berjalan jauh mencari sinyal.Bidan desa dapat menerima laporan kesehatan via video call.Warga mulai mengenal marketplace, konten digital, dan peluang baru'
+    fullContent: "In early 2020, during the COVID-19 pandemic, when the world was forced to adapt to online systems, Pangrumasan Village faced a major obstacle: no mobile signal, let alone internet. As someone passionate about networking and technology, I couldn't just stand by. I began with the simplest method—tying a mobile phone to a grid antenna at the end of a long bamboo pole, searching for signal gaps between the fields and gardens. We tried many alternatives, including using a Telkomsel Orbit modem with external antenna support. Sometimes the signal came, sometimes it disappeared—but our desire to connect never faded. Eventually, a real solution arrived: Starlink, the satellite internet service by SpaceX. Though unfamiliar at first, I dared to install it in our village. With help from the locals, a simple tower, and a local network setup, we managed to distribute Wi-Fi to several key points.Real Impact:Teachers were able to teach online again.Students could join classes without walking far to find a signal. he village midwife could receive health reports via video call.Residents started discovering digital marketplaces, content, and new opportunities."
   },
   {
     id: 2,
-    title: 'Pengalaman Membangun IoT Smart Garden',
-    excerpt: 'Sebuah cerita pribadi tentang tantangan pembuatan iot smart garden',
+    title: 'My Experience Building an IoT Smart Garden',
+    excerpt: 'A personal story about the challenges of building an IoT smart garden.',
     imageUrl: '/journal-iot-journey.jpg',
-    fullContent: 'Proyek Smart Garden System ini saya kerjakan saat menyusun skripsi, sebagai solusi otomatisasi penyiraman tanaman berbasis IoT. Dengan memanfaatkan ESP32, sensor suhu, kelembapan, dan kelembapan tanah, sistem ini dapat memantau kondisi lingkungan dan mengaktifkan pompa air secara otomatis.Selain itu, saya juga membuat antarmuka HTML responsif agar pengguna bisa melihat data sensor dan mengontrol pompa secara manual. Proyek ini menjadi wujud ketertarikan saya pada pengembangan teknologi ramah lingkungan yang praktis dan efisien.'
+    fullContent: "I developed the Smart Garden System as part of my thesis project, aiming to automate plant watering using IoT. With the help of an ESP32, temperature and humidity sensors, and a soil moisture sensor, the system monitors environmental conditions and automatically activates a water pump when needed. I also built a responsive HTML interface to allow users to monitor sensor data and control the pump manually. This project reflects my passion for creating environmentally friendly technologies that are both practical and efficient."
   },
   {
     id: 3,
     title: 'Curug Batu Nyusun',
-    excerpt: 'urug Batu Nyusun di Desa Pangrumasan, Garut, menyuguhkan keindahan air terjun alami dengan susunan batu unik dan suasana yang masih asri. Surga tersembunyi ini cocok untuk wisata alam dan refleksi diri, sekaligus menyimpan nilai budaya lokal.',
+    excerpt: 'Curug Batu Nyusun, located in Pangrumasan Village, Garut, showcases a beautiful natural waterfall with unique stone formations and a serene atmosphere. A hidden paradise perfect for nature tourism and self-reflection, while preserving local cultural values.',
     imageUrl: '/batunyusun.jpg',
-    fullContent: 'Curug Batu Nyusun terletak di Desa Pangrumasan, Kabupaten Garut. Air terjun ini memiliki formasi unik batu-batu besar yang tersusun alami, menciptakan pemandangan yang memesona.Suasana sekitar masih sangat asri, dikelilingi pepohonan dan suara alam yang menenangkan. Curug ini belum banyak dikenal, menjadikannya cocok untuk wisata alam dan refleksi diri.Selain keindahan alamnya, curug ini juga menyimpan cerita rakyat dan nilai budaya lokal. Potensi sebagai destinasi ekowisata sangat besar, asalkan dijaga bersama oleh masyarakat.'
-  },
+    fullContent: "Curug Batu Nyusun is located in Pangrumasan Village, Garut Regency. This waterfall features naturally arranged large stone formations that create a stunning view.The surrounding area remains untouched, surrounded by lush trees and calming sounds of nature. As a relatively unknown spot, it’s ideal for nature lovers and peaceful reflection. Beyond its scenic beauty, this waterfall also holds local folklore and cultural significance. It has great potential to become an ecotourism destination—provided it is preserved by the local community."
+  }
+];
+
 ];
